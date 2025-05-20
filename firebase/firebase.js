@@ -1,5 +1,4 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./portfolio-ba819-firebase-adminsdk-fbsvc-47a888752e.json');
 
 
 admin.initializeApp({
