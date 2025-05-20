@@ -24,7 +24,7 @@ async function createContact(req, res) {
     const docRef = await db.collection('users').add({ name, email, message });
     res.status(201).json({ message: 'Submited Successfully', id: docRef.id, success: true });
   } catch (error) {
-    res.status(500).json({ error: 'Error adding user', success: false });
+    res.status(500).json({ message: "Something went wrong", success: false });
   }
 }
 
