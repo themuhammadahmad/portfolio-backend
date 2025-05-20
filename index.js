@@ -7,10 +7,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 // middlewares
-app.use(cors());
-// app.use(cors({
-//   origin: "https://muhammad-ahmad-iota.vercel.app"
-// }));
+app.use(cors({
+  origin: "https://muhammad-ahmad-iota.vercel.app"
+}));
 app.use(express.json());
 
 // app routes
