@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 dotenv.config();
 const contactRoutes = require("./routes/contactRoutes.js");
 const {trackVisitor} = require("./controllers/visitControllers.js");
+const db = require("./firebase/firebase.js");
 const app = express();
 const PORT = process.env.PORT || 5000;
 // middlewares
@@ -23,9 +24,12 @@ app.use(express.json());
 
 
 // app routes
-app.get("/", (req, res) => {
+app.get("/asdf@57000", async (req, res) => {
+   const snapshot = await db.collection('visitors').get();
+
      res.json({
-        message: "Hello World"
+        message: "Working fine",
+        NumberOfVisitors: snapshot?.size
      });
 })
 
