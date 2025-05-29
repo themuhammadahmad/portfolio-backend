@@ -1,4 +1,5 @@
 const db = require("../firebase/firebase.js");
+
 async function createContact(req, res) {
   const { name, email, message } = req.body;
 
@@ -27,6 +28,5 @@ async function createContact(req, res) {
     res.status(500).json({ message: "Something went wrong", success: false });
   }
 }
-
 
 module.exports = {createContact};
